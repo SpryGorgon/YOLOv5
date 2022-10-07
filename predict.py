@@ -25,7 +25,7 @@ def predict(
     # Initialize
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     # load FP32 model
-    model = attempt_load(weights, map_location=device, fuse=False)
+    model = attempt_load(weights, device=device, fuse=False)
     # model stride
     stride = int(model.stride.max())
     # get class names
