@@ -22,7 +22,7 @@ def image_resizer(image, fixed_size=1280, grayscale=True):
         )
     if grayscale:
         resized_image = resized_image.convert('L') 
-    return resized_image_gray
+    return resized_image
 
 def image_handler(image, fixed_size = 1920):
     image = ImageOps.autocontrast(image.convert('L'), cutoff = 5, ignore = 5)
